@@ -1,3 +1,3 @@
 <?php
-  $name = "bob";
-  echo "hel\n{$name}lo, $name";
+$name = "bob";
+echo "hel\n{$name}lo, $name";

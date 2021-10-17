@@ -1,8 +1,8 @@
-<?php 
+<?php
 // データ型とは？
 $i = 1;
 $b = true;
-$str = 'hello';
+$str = "hello";
 
 // データ型の確認方法 var_dump
 // var_dump($b);
@@ -14,4 +14,4 @@ $str = 'hello';
 // echo $i + (int) $b;
 
 // 型の取り扱いの注意点
-var_dump($i === '1');
+var_dump($i === "1");

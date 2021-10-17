@@ -1,0 +1,24 @@
+{
+  "name": "fullstack-webdev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write '**/*.(php)'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/takakikasuga/mamp-pj.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/takakikasuga/mamp-pj/issues"
+  },
+  "homepage": "https://github.com/takakikasuga/mamp-pj#readme",
+  "devDependencies": {
+    "@prettier/plugin-php": "^0.17.5",
+    "prettier": "^2.4.1"
+  }
+}

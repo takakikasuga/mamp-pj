@@ -21,9 +21,8 @@
  */
 ?>
 
-<form action="<?php $_SERVER['REQUEST_URI']; ?>" method="POST">
+<form action="<?php $_SERVER["REQUEST_URI"]; ?>" method="POST">
     商品ID：<input type="text" name="product_id">
     <input type="submit">
 </form>
 
-<?php

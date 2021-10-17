@@ -1,19 +1,19 @@
-<?php 
+<?php
 namespace db;
 
 use db\DataSource;
 use model\CommentModel;
 
-class CommentQuery {
-    
-    public static function fetchByTopicId($topic) {
+class CommentQuery
+{
+  public static function fetchByTopicId($topic)
+  {
+    if (!$topic->isValidId()) {
+      return false;
+    }
 
-        if(!$topic->isValidId()) {
-            return false;
-        }
-        
-        $db = new DataSource;
-        $sql = '
+    $db = new DataSource();
+    $sql = '
         select 
             c.*, u.nickname 
         from comments c
@@ -26,27 +26,30 @@ class CommentQuery {
         order by c.id desc
         ';
 
-        $result = $db->select($sql, [
-            ':id' => $topic->id
-        ], DataSource::CLS, CommentModel::class);
+    $result = $db->select(
+      $sql,
+      [
+        ":id" => $topic->id,
+      ],
+      DataSource::CLS,
+      CommentModel::class
+    );
 
-        return $result;
+    return $result;
+  }
 
-    }
+  // public static function insert($user) {
 
+  //     $db = new DataSource;
+  //     $sql = 'insert into users(id, pwd, nickname) values (:id, :pwd, :nickname)';
 
-    // public static function insert($user) {
+  //     $user->pwd = password_hash($user->pwd, PASSWORD_DEFAULT);
 
-    //     $db = new DataSource;
-    //     $sql = 'insert into users(id, pwd, nickname) values (:id, :pwd, :nickname)';
+  //     return $db->execute($sql, [
+  //         ':id' => $user->id,
+  //         ':pwd' => $user->pwd,
+  //         ':nickname' => $user->nickname,
+  //     ]);
 
-    //     $user->pwd = password_hash($user->pwd, PASSWORD_DEFAULT);
-
-    //     return $db->execute($sql, [
-    //         ':id' => $user->id,
-    //         ':pwd' => $user->pwd,
-    //         ':nickname' => $user->nickname,
-    //     ]);
-
-    // }
+  // }
 }

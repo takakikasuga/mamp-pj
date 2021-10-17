@@ -1,111 +1,110 @@
-<?php 
+<?php
 namespace model;
 
 use lib\Msg;
 
-class CommentModel extends AbstractModel {
+class CommentModel extends AbstractModel
+{
+  public int $id;
+  public int $topic_id;
+  public int $agree;
+  public string $body;
+  public string $user_id;
+  public string $nickname;
+  public int $del_flg;
 
-    public int $id;
-    public int $topic_id;
-    public int $agree;
-    public string $body;
-    public string $user_id;
-    public string $nickname;
-    public int $del_flg;
+  protected static $SESSION_NAME = "_comment";
 
-    protected static $SESSION_NAME = '_comment';
+  // public function isValidId() {
 
-    // public function isValidId() {
+  //     return static::validateId($this->id);
 
-    //     return static::validateId($this->id);
-        
-    // }
+  // }
 
-    // public static function validateId($val) {
-    //     $res = true;
+  // public static function validateId($val) {
+  //     $res = true;
 
-    //     if(empty($val)) {
+  //     if(empty($val)) {
 
-    //         Msg::push(Msg::ERROR, 'ユーザーIDを入力してください。');
-    //         $res = false;
+  //         Msg::push(Msg::ERROR, 'ユーザーIDを入力してください。');
+  //         $res = false;
 
-    //     } else {
+  //     } else {
 
-    //         if(strlen($val) > 10) {
-    //             Msg::push(Msg::ERROR, 'ユーザーIDは１０桁以下で入力してください。');
-    //             $res = false;
-    //         }
+  //         if(strlen($val) > 10) {
+  //             Msg::push(Msg::ERROR, 'ユーザーIDは１０桁以下で入力してください。');
+  //             $res = false;
+  //         }
 
-    //         if(!is_alnum($val)) {
-    //             Msg::push(Msg::ERROR, 'ユーザーIDは半角英数字で入力してください。');
-    //             $res = false;
-    //         }
+  //         if(!is_alnum($val)) {
+  //             Msg::push(Msg::ERROR, 'ユーザーIDは半角英数字で入力してください。');
+  //             $res = false;
+  //         }
 
-    //     }
+  //     }
 
-    //     return $res;
-    // }
-    
-    // public static function validatePwd($val)
-    // {
-    //     $res = true;
+  //     return $res;
+  // }
 
-    //     if (empty($val)) {
+  // public static function validatePwd($val)
+  // {
+  //     $res = true;
 
-    //         Msg::push(Msg::ERROR, 'パスワードを入力してください。');
-    //         $res = false;
+  //     if (empty($val)) {
 
-    //     } else {
+  //         Msg::push(Msg::ERROR, 'パスワードを入力してください。');
+  //         $res = false;
 
-    //         if(strlen($val) < 4) {
+  //     } else {
 
-    //             Msg::push(Msg::ERROR, 'パスワードは４桁以上で入力してください。');
-    //             $res = false;
+  //         if(strlen($val) < 4) {
 
-    //         } 
-            
-    //         if(!is_alnum($val)) {
+  //             Msg::push(Msg::ERROR, 'パスワードは４桁以上で入力してください。');
+  //             $res = false;
 
-    //             Msg::push(Msg::ERROR, 'パスワードは半角英数字で入力してください。');
-    //             $res = false;
+  //         }
 
-    //         }
-    //     }
+  //         if(!is_alnum($val)) {
 
-    //     return $res;
-    // }
+  //             Msg::push(Msg::ERROR, 'パスワードは半角英数字で入力してください。');
+  //             $res = false;
 
-    // public function isValidPwd()
-    // {
-    //     return static::validatePwd($this->pwd);
-    // }
+  //         }
+  //     }
 
-    // public static function validateNickname($val)
-    // {
+  //     return $res;
+  // }
 
-    //     $res = true;
+  // public function isValidPwd()
+  // {
+  //     return static::validatePwd($this->pwd);
+  // }
 
-    //     if (empty($val)) {
+  // public static function validateNickname($val)
+  // {
 
-    //         Msg::push(Msg::ERROR, 'ニックネームを入力してください。');
-    //         $res = false;
+  //     $res = true;
 
-    //     } else {
+  //     if (empty($val)) {
 
-    //         if(mb_strlen($val) > 10) {
+  //         Msg::push(Msg::ERROR, 'ニックネームを入力してください。');
+  //         $res = false;
 
-    //             Msg::push(Msg::ERROR, 'ニックネームは１０桁以下で入力してください。');
-    //             $res = false;
-                
-    //         } 
-    //     }
+  //     } else {
 
-    //     return $res;
-    // }
+  //         if(mb_strlen($val) > 10) {
 
-    // public function isValidNickname()
-    // {
-    //     return static::validateNickname($this->nickname);
-    // }
+  //             Msg::push(Msg::ERROR, 'ニックネームは１０桁以下で入力してください。');
+  //             $res = false;
+
+  //         }
+  //     }
+
+  //     return $res;
+  // }
+
+  // public function isValidNickname()
+  // {
+  //     return static::validateNickname($this->nickname);
+  // }
 }
-

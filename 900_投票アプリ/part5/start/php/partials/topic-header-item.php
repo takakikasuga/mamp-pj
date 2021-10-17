@@ -6,7 +6,7 @@ use lib\Auth;
 
 function topic_header_item($topic, $from_top_page)
 {
-?>
+  ?>
     <div class="row">
         <div class="col">
             <!-- 左側 -->
@@ -25,7 +25,7 @@ function topic_header_item($topic, $from_top_page)
 
 function chart($topic)
 {
-?>
+  ?>
     <canvas id="chart" width="400" height="400" data-likes="<?php echo $topic->likes; ?>" data-dislikes="<?php echo $topic->dislikes; ?>"></canvas>
     <style>
         #chart {
@@ -37,16 +37,18 @@ function chart($topic)
 
 function topic_main($topic, $from_top_page)
 {
-?>
+  ?>
     <div>
-        <?php if ($from_top_page) :  ?>
+        <?php if ($from_top_page): ?>
             <h1 class="sr-only">みんなのアンケート</h1>
             <h2 class="h1">
-                <a class="text-body" href="<?php the_url('topic/detail?topic_id=' . $topic->id); ?>">
+                <a class="text-body" href="<?php the_url(
+                  "topic/detail?topic_id=" . $topic->id
+                ); ?>">
                     <?php echo $topic->title; ?>
                 </a>
             </h2>
-        <?php else : ?>
+        <?php else: ?>
             <h1><?php echo $topic->title; ?></h1>
         <?php endif; ?>
         <span class="mr-1 h5">Posted by <?php echo $topic->nickname; ?></span>
@@ -70,10 +72,10 @@ function topic_main($topic, $from_top_page)
 
 function comment_form($topic)
 {
-?>
+  ?>
 
-    <?php if (Auth::isLogin()) : ?>
-        <form action="<?php the_url('topic/detail'); ?>" method="POST">
+    <?php if (Auth::isLogin()): ?>
+        <form action="<?php the_url("topic/detail"); ?>" method="POST">
             <span class="h4">あなたは賛成？それとも反対？</span>
             <input type="hidden" name="topic_id" value="<?php echo $topic->id; ?>">
             <div class="form-group">
@@ -98,10 +100,12 @@ function comment_form($topic)
             </div>
 
         </form>
-    <?php else : ?>
+    <?php else: ?>
         <div class="text-center mt-5">
             <div class="mb-2">ログインしてアンケートに参加しよう！</div>
-            <a href="<?php the_url('login'); ?>" class="btn btn-lg btn-success">ログインはこちら！</a>
+            <a href="<?php the_url(
+              "login"
+            ); ?>" class="btn btn-lg btn-success">ログインはこちら！</a>
         </div>
     <?php endif; ?>
 <?php

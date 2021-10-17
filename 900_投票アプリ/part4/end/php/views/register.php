@@ -1,8 +1,9 @@
-<?php 
+<?php
 namespace view\register;
 
-function index() {
-?>
+function index()
+{
+  ?>
 <h1 class="sr-only">アカウント登録</h1>
 <div class="mt-5">
     <div class="text-center mb-4">
@@ -24,7 +25,7 @@ function index() {
             </div>
             <div class="d-flex align-items-center justify-content-between">
                 <div>
-                    <a href="<?php the_url('login'); ?>">ログインへ</a>
+                    <a href="<?php the_url("login"); ?>">ログインへ</a>
                 </div>
                 <div>
                     <input type="submit" value="登録" class="btn btn-primary shadow-sm">
@@ -33,4 +34,5 @@ function index() {
         </form>
     </div>
 </div>
-<?php } ?>
+<?php
+} ?>

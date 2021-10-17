@@ -18,8 +18,8 @@ $price = 100;
 $amount = 3;
 $sum = $price * $amount;
 
-if($sum > 0) {
+if ($sum > 0) {
   echo "{$price}円の商品を{$amount}個買ったので合計金額は{$sum}円です。";
-} else if($sum === 0) {
- echo "何か商品を買いましょう。";
+} elseif ($sum === 0) {
+  echo "何か商品を買いましょう。";
 }

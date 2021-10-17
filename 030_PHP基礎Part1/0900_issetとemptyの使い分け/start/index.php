@@ -18,16 +18,16 @@
 $a = null;
 $b = 1;
 
-var_dump((isset($a)));
+var_dump(isset($a));
 
-if(isset($a)) {
+if (isset($a)) {
   echo "true";
 } else {
   echo "false";
 }
 
-if(empty($a)) {
-    echo "true";
+if (empty($a)) {
+  echo "true";
 } else {
- echo "false";
+  echo "false";
 }

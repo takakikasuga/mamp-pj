@@ -1,33 +1,32 @@
-<?php 
-require_once 'config.php';
+<?php
+require_once "config.php";
 
-require_once SOURCE_BASE . 'partials/header.php';
+require_once SOURCE_BASE . "partials/header.php";
 
-$rpath = str_replace(BASE_CONTEXT_PATH, '', $_SERVER['REQUEST_URI']);
-$method = strtolower($_SERVER['REQUEST_METHOD']);
+$rpath = str_replace(BASE_CONTEXT_PATH, "", $_SERVER["REQUEST_URI"]);
+$method = strtolower($_SERVER["REQUEST_METHOD"]);
 
 route($rpath, $method);
 
-function route($rpath, $method) {
-    if($rpath === '') {
-        $rpath = 'home';
-    }
-    
-    $targetFile = SOURCE_BASE . "controllers/{$rpath}.php";
-    
-    if(!file_exists($targetFile)) {
-        require_once SOURCE_BASE . "views/404.php";
-        return;
-    }
+function route($rpath, $method)
+{
+  if ($rpath === "") {
+    $rpath = "home";
+  }
 
-    require_once $targetFile;
+  $targetFile = SOURCE_BASE . "controllers/{$rpath}.php";
 
-    $fn = "\\controller\\{$rpath}\\{$method}";
+  if (!file_exists($targetFile)) {
+    require_once SOURCE_BASE . "views/404.php";
+    return;
+  }
 
-    $fn();
+  require_once $targetFile;
+
+  $fn = "\\controller\\{$rpath}\\{$method}";
+
+  $fn();
 }
-
-
 
 // if($_SERVER['REQUEST_URI'] === 'login') {
 //     require_once SOURCE_BASE . 'controllers/login.php';
@@ -37,6 +36,6 @@ function route($rpath, $method) {
 //     require_once SOURCE_BASE . 'controllers/home.php';
 // }
 
-require_once SOURCE_BASE . 'partials/footer.php';
+require_once SOURCE_BASE . "partials/footer.php";
 
 ?>

@@ -1,10 +1,11 @@
-<?php 
+<?php
 class Person
 {
-    private $name;
-    public $age;
+  private $name;
+  public $age;
 
-    function hello() {
-        echo 'hello, ' . $this->name;
-    }
+  function hello()
+  {
+    echo "hello, " . $this->name;
+  }
 }

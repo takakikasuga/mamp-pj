@@ -1,4 +1,4 @@
-<?php 
+<?php
 // ==と===の違い
 /* 
 falsyな値
@@ -8,9 +8,9 @@ falsyな値
 NULL
 FALSE
 */
-$var = '';
-if(!0) {
-    echo 'true';
+$var = "";
+if (!0) {
+  echo "true";
 } else {
-    echo 'false';
+  echo "false";
 }
