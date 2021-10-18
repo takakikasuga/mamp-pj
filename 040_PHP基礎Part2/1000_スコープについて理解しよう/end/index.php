@@ -12,8 +12,11 @@ $a = 0;
 echo $a;
 function fn1()
 {
+  global $a;
+  echo $a;
   $b = 1;
 }
+fn1();
 function fn2()
 {
   global $a;
